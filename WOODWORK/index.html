@@ -1,0 +1,77 @@
+<?php
+// Start a session to track the user's login status
+session_start();
+
+// Check if the user is not logged in (i.e., session variable not set)
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    // Redirect the user to the login page
+    header("Location: login.html");
+    exit; // Stop further execution of the script
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplendidSaw Crafts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+<div class="main_box">
+    <input type="checkbox" id="check">
+    <div class="btn_one">
+        <label for="check">
+            <i class="fas fa-bars"></i>
+        </label>
+    </div>
+    <div class="sidebar_menu">
+        <div class="logo">
+            <a href="#">SplendidSaw Crafts</a>
+        </div>
+        <div class="btn_two">
+            <label for="check">
+                <i class="fas fa-times"></i>
+            </label>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><i class="fas fa-shopping-cart"></i>
+                    <a href="orders.php">Orders</a>
+                </li>
+                <li>
+                    <i class="fas fa-cubes"></i>
+                    <a href="inventory">Inventory</a>
+                </li>
+                <li>
+                    <i class="fas fa-users"></i>
+                    <a href="customer.html">Customers</a>
+                </li>
+
+                <li>
+                    <i class="fas fa-chart-line"></i>
+                    <a href="reports.php">Reports</a>
+                </li>
+
+
+                <li>
+                    <i class="fas fa-phone-volume"></i>
+                    <a href="logout.php">Logout</a> <!-- Changed to logout.php for logout functionality -->
+                </li>
+
+            </ul>
+        </div>
+        <div class="social_media">
+            <ul>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
